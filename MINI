@@ -1,0 +1,72 @@
+#include <Servo.h>
+
+const int trigPin = 8;
+const int echoPin = 9;
+const int relayPin = 7; // Define the pin for the relay
+const int thresholdDistance = 40; 
+
+long duration;
+int distance;
+Servo ultrasonicServo;
+Servo missileServo; 
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(relayPin, OUTPUT); // Set relay pin as output
+  Serial.begin(9600);
+  ultrasonicServo.attach(10); 
+  missileServo.attach(11); 
+}
+
+void loop() {
+  for (int i = 30; i <= 150; i++) {  
+    ultrasonicServo.write(i);
+    missileServo.write(i); 
+    delay(30);
+    distance = calculateDistance();
+    
+    Serial.print(i);
+    Serial.print(",");
+    Serial.print(distance);
+    Serial.print(".");
+
+    if (distance < thresholdDistance) {
+      triggerRelay();
+    }
+  }
+
+  for (int i = 150; i > 30; i--) {  
+    ultrasonicServo.write(i);
+    missileServo.write(i); 
+    delay(30);
+    distance = calculateDistance();
+    
+    Serial.print(i);
+    Serial.print(",");
+    Serial.print(distance);
+    Serial.print(".");
+
+    if (distance < thresholdDistance) {
+      triggerRelay();
+    }
+  }
+}
+
+int calculateDistance() { 
+  digitalWrite(trigPin, LOW); 
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH); 
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration = pulseIn(echoPin, HIGH); 
+  distance = duration * 0.034 / 2;
+  return distance;
+}
+
+void triggerRelay() {
+  digitalWrite(relayPin, HIGH); // Turn on the relay
+  delay(100); // Wait for 100 milliseconds
+  digitalWrite(relayPin, LOW); // Turn off the relay
+  delay(3000); // Wait for 5 seconds before checking again
+}
