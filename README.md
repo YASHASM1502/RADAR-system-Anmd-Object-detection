@@ -12,7 +12,8 @@ Weather Forecasting: Tracking storms, precipitation, and atmospheric situations
 Military Surveillance: Detecting and tracking enemy objectives for countrywide safety.
 Maritime Navigation: Assisting ships in navigation and collision avoidance.
 
-COMPONENTS USED IN THE PROTOTYPE
+COMPONENTS USED IN THE PROTOTYPE![ping-sensor-radar-730x423](https://github.com/user-attachments/assets/a6e58c4c-539f-42e9-b241-4603fc0116f6)
+
 ❖ NodeMCU (ESP8266) Microcontroller: o Acts as the central control unit for the system, managing inputs and outputs, and connecting to the mobile Wi-Fi network. 
 ❖ Arduino Uno: o Works in conjunction with the NodeMCU to control additional components such as the ultrasonic sensor and servo motors. 
 ❖ Ultrasonic Sensor: o Measures distances to detect potential threats. It is mounted on a servo motor for directional scanning. 
@@ -24,6 +25,11 @@ COMPONENTS USED IN THE PROTOTYPE
 ❖ Weapon: o Simulates the missile used in the counter-attack mechanism, launched by the solenoid.
  ❖ Power Supply(3.7V batteries):o Provides the necessary electrical power for the NodeMCU, Arduino board, sensors, motors, and solenoid. ❖ Connecting Wires and Cables: o For interconnecting the various components, including sensors, motors, and microcontrollers. 
 ❖ Mounting Hardware: o Includes brackets, stands, and supports for securely positioning the ultrasonic sensor, motors, and solenoid.
+
+![ping-sensor-radar-730x423](https://github.com/user-attachments/assets/4dd3bded-538b-4405-a8c8-8ad047f241ad)
+
+
+
 
 
 
