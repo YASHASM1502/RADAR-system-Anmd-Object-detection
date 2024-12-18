@@ -26,7 +26,7 @@ COMPONENTS USED IN THE PROTOTYPE![ping-sensor-radar-730x423](https://github.com/
  ❖ Power Supply(3.7V batteries):o Provides the necessary electrical power for the NodeMCU, Arduino board, sensors, motors, and solenoid. ❖ Connecting Wires and Cables: o For interconnecting the various components, including sensors, motors, and microcontrollers. 
 ❖ Mounting Hardware: o Includes brackets, stands, and supports for securely positioning the ultrasonic sensor, motors, and solenoid.
 
-![ping-sensor-radar-730x423](https://github.com/user-attachments/assets/4dd3bded-538b-4405-a8c8-8ad047f241ad)
+
 
 
 
